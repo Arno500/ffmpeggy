@@ -194,6 +194,7 @@ export class FFmpeggy extends (EventEmitter as new () => TypedEmitter<FFmpegEven
         cwd,
         input: input instanceof ReadStream ? input : undefined,
         stdout: output instanceof WriteStream ? output : undefined,
+        buffer: output instanceof WriteStream ? false : !this.pipedOutput
       });
 
       // if (this.process.stdin && input instanceof ReadStream) {
